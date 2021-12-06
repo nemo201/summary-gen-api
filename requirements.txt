@@ -3,3 +3,4 @@ numpy==1.21.4
 sentencepiece==0.1.96
 torch==1.10.0
 transformers==4.12.5
+jsonify==0.5
