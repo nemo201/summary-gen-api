@@ -22,4 +22,6 @@ allow_headers=["*"],
 
 @app.get("/summary/")
 def summary(q: str):
-    return {"summary": return_summary(q)}
+    return generate_summary(q)
+
+
