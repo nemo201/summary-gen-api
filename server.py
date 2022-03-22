@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from get_summary import return_summary
+from summary_gen import generate_summary
 
 app = FastAPI()
 
