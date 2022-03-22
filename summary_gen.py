@@ -23,7 +23,6 @@ def generate_summary(text):
     output = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
     #print(output)
     result={
-        "Text":text,
         "Summary":output
     }
     return output
