@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from summary_gen import generate_summary
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -20,8 +21,18 @@ allow_methods=["*"],
 allow_headers=["*"],
 )
 
-@app.get("/summary/")
-def summary(q: str):
-    return generate_summary(q)
+class Item(BaseModel):
+    text: str
+      
+
+
+@app.post("/summary/")
+def summary(item: Item):
+    return generate_summary(item.text)
+
+
+@app.post("/items/")
+async def create_item(item: Item):
+    return item
 
 
