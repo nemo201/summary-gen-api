@@ -8,6 +8,8 @@
 
 tasks:
     - init: pip install -r requirements.txt
-      command: uvicorn server:app --reload
+    - command: pip install fastapi
+    - command: pip install uvicorn[standard]
+    - command: uvicorn server:app --reload
 
 
